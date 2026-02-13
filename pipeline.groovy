@@ -14,7 +14,6 @@ pipeline {
             steps {
                 println "stages me"
                 println "================Stage 2==================="
-                steps.println("Что то там такое")
             }
         }
     }
