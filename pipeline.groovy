@@ -1,4 +1,4 @@
-@Field boolean flag = false
+@Field boolean flag
 
 
 
