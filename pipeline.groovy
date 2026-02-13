@@ -1,15 +1,24 @@
+import groovy.transform.Field
+
+
+@Field def flag
+
+
+
+
 pipeline {
     agent any
     stages {
         stage("Stage 1") {
             steps {
+                flag = params.STAGE2
                 println "Stage 1"
                 println "================Stage 1==================="
             }
         }
         stage("Stage 2") {
             when {
-                expression { return params.STAGE2 }
+                !flag
             }
             steps {
                 println "Stage 2"
