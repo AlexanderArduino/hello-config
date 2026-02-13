@@ -11,24 +11,31 @@ pipeline {
     stages {
         stage("Stage 1") {
             steps {
-                flag = params.STAGE2
-                println "Stage 1"
-                println "================Stage 1==================="
+                script{
+                    flag = params.STAGE2 ?: false
+                    println "Stage 1"
+                    println "================Stage 1==================="
+                    println "flag = ${flag}"
+                }
             }
         }
         stage("Stage 2") {
             when {
-                !flag
+                expression { return !flag }
             }
             steps {
-                println "Stage 2"
-                println "================Stage 2==================="
+                script {
+                    println "Stage 2"
+                    println "================Stage 2==================="
+                }
             }
         }
         stage("Stage 3") {
             steps {
-                println "stage 3"
-                println "================stage 3==================="
+                script {
+                    println "stage 3"
+                    println "================stage 3==================="
+                }
             }
         }
     }
