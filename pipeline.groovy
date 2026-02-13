@@ -1,20 +1,15 @@
-def boolean flag
-
-
-
 pipeline {
     agent any
     stages {
         stage("Stage 1") {
             steps {
-                flag = params.STAGE2
                 println "stages me"
                 println "================From Git==================="
             }
         }
         stage("Stage 2") {
             when {
-                flag = true
+                expression { return params.STAGE2 }
             }
             steps {
                 println "stages me"
