@@ -12,7 +12,7 @@ pipeline {
         stage("Stage 1") {
             steps {
                 script{
-                    flag = params.STAGE2 ?: false
+                    flag = params.STAGE2
                     println "Stage 1"
                     println "================Stage 1==================="
                     println "flag = ${flag}"
@@ -21,7 +21,7 @@ pipeline {
         }
         stage("Stage 2") {
             when {
-                expression { return !flag }
+                expression { return flag }
             }
             steps {
                 script {
