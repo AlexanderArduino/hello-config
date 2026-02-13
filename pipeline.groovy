@@ -1,4 +1,4 @@
-@Field boolean flag
+def boolean flag
 
 
 
