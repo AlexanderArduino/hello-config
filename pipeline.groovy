@@ -14,7 +14,6 @@ pipeline {
                 script{
                     flag = params.STAGE2
                     println "Stage 1"
-                    println "Stage 1"
                     println "================Stage 1==================="
                     println "flag = ${flag}"
                 }
