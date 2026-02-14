@@ -35,6 +35,8 @@ pipeline {
                 script {
                     println "stage 3"
                     println "================stage 3==================="
+                    println "================stage 3==================="
+
                 }
             }
         }
